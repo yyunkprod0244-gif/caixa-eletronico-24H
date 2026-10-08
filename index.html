@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NOVA24 — Banco Digital</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <aside class="sidebar">
+
+      <div class="logo">
+        <span class="logo-mark">N</span>
+        NOVA24
+      </div>
+
+      <div class="nav-title">
+        Menu principal
+      </div>
+
+      <nav>
+        <button class="nav-item active" data-page="overview">
+          <span>◈</span>
+          <span>Visão geral</span>
+        </button>
+
+        <button class="nav-item" data-page="transfer">
+          <span>↗</span>
+          <span>Transferir</span>
+        </button>
+
+        <button class="nav-item" data-page="cards">
+          <span>▣</span>
+          <span>Cartões</span>
+        </button>
+
+        <button class="nav-item" data-page="investments">
+          <span>◌</span>
+          <span>Investimentos</span>
+        </button>
+
+        <button class="nav-item" data-page="settings">
+          <span>⚙</span>
+          <span>Configurações</span>
+        </button>
+      </nav>
+
+      <div class="support">
+        <small>24/7 concierge</small>
+        <strong>Precisa de ajuda?</strong>
+
+        <button onclick="showToast('Atendimento conectado.')">
+          Falar com suporte
+        </button>
+      </div>
+
+    </aside>
+
+    <main>
+
+      <!-- VISÃO GERAL -->
+      <section id="overview" class="page active-page">
+
+        <header>
+          <div class="welcome">
+            <h1>Olá, Rafael 👋</h1>
+            <p>Seu dinheiro, sempre em movimento.</p>
+          </div>
+
+          <div class="header-actions">
+            <div class="language-selector">
+              <button class="active">PT</button>
+              <button>EN</button>
+            </div>
+
+            <button
+              class="icon-button"
+              onclick="showToast('Você não possui novas notificações.')">
+              ♢
+            </button>
+
+            <div class="avatar">RA</div>
+          </div>
+        </header>
+
+        <section class="hero-grid">
+
+          <div class="panel balance-card">
+            <span class="eyebrow">
+              Saldo disponível
+            </span>
+
+            <div class="balance">
+              <span id="balanceValue">
+                R$ 24.680,90
+              </span>
+
+              <span
+                class="eye"
+                onclick="toggleBalance()">
+                ◉
+              </span>
+            </div>
+
+            <div class="balance-meta">
+              <span class="change">+12,8%</span>
+              <span class="meta-text">neste mês</span>
+            </div>
+
+            <div class="quick-actions">
+              <button
+                class="quick"
+                onclick="showPage('transfer')">
+
+                <span class="quick-icon">↗</span>
+                <span>Enviar dinheiro</span>
+              </button>
+
+              <button
+                class="quick"
+                onclick="showToast('Área de depósito aberta.')">
+
+                <span class="quick-icon">↓</span>
+                <span>Adicionar dinheiro</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="panel scene">
+            <h3>O banco do futuro.</h3>
+
+            <p>
+              Controle sua vida financeira com segurança,
+              velocidade e inteligência.
+            </p>
+
+            <div class="orb"></div>
+            <div class="grid-floor"></div>
+          </div>
+
+        </section>
+
+        <section class="section">
+
+          <div class="section-head">
+            <h2>Atividade recente</h2>
+
+            <button onclick="showToast('Todas as transações estão sendo exibidas.')">
+              Ver tudo
+            </button>
+          </div>
+
+          <div class="content-grid">
+
+            <div class="transactions">
+
+              <div class="transaction">
+                <div class="transaction-left">
+                  <div class="transaction-icon">⌁</div>
+
+                  <div>
+                    <div class="transaction-name">
+                      Spotify Premium
+                    </div>
+
+                    <div class="transaction-date">
+                      Hoje, 09:42
+                    </div>
+                  </div>
+                </div>
+
+                <div class="amount">
+                  − R$ 21,90
+                </div>
+              </div>
+
+              <div class="transaction">
+                <div class="transaction-left">
+                  <div class="transaction-icon">↙</div>
+
+                  <div>
+                    <div class="transaction-name">
+                      Pix recebido
+                    </div>
+
+                    <div class="transaction-date">
+                      Ontem, 18:20
+                    </div>
+                  </div>
+                </div>
+
+                <div class="amount positive">
+                  + R$ 850,00
+                </div>
+              </div>
+
+              <div class="transaction">
+                <div class="transaction-left">
+                  <div class="transaction-icon">⌂</div>
+
+                  <div>
+                    <div class="transaction-name">
+                      Mercado Aurora
+                    </div>
+
+                    <div class="transaction-date">
+                      18 Jun, 13:08
+                    </div>
+                  </div>
+                </div>
+
+                <div class="amount">
+                  − R$ 143,70
+                </div>
+              </div>
+
+              <div class="transaction">
+                <div class="transaction-left">
+                  <div class="transaction-icon">✦</div>
+
+                  <div>
+                    <div class="transaction-name">
+                      Rendimento automático
+                    </div>
+
+                    <div class="transaction-date">
+                      15 Jun, 08:00
+                    </div>
+                  </div>
+                </div>
+
+                <div class="amount positive">
+                  + R$ 32,45
+                </div>
+              </div>
+
+            </div>
+
+            <div class="card-panel">
+
+              <div class="section-head">
+                <h2>Meu cartão</h2>
+
+                <button onclick="showToast('Mais opções do cartão abertas.')">
+                  •••
+                </button>
+              </div>
+
+              <div class="virtual-card">
+
+                <div class="card-top">
+                  <span>
+                    NOVA<span class="card-highlight">24</span>
+                  </span>
+
+                  <span class="chip"></span>
+                </div>
+
+                <div class="card-number">
+                  5482 •••• •••• 9021
+                </div>
+
+                <div class="card-bottom">
+                  <span>RAFAEL ALMEIDA</span>
+                  <span>VIRTUAL</span>
+                </div>
+
+              </div>
+
+              <div class="card-controls">
+                <button onclick="showToast('Cartão bloqueado.')">
+                  🔒 Bloquear
+                </button>
+
+                <button onclick="showToast('Detalhes do cartão exibidos.')">
+                  ⌁ Detalhes
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </section>
+
+      <!-- TRANSFERIR -->
+      <section id="transfer" class="page">
+
+        <div class="page-header">
+          <span class="eyebrow">NOVA24 PAYMENTS</span>
+          <h1>Transferir dinheiro</h1>
+          <p>Envie dinheiro de forma rápida e segura.</p>
+        </div>
+
+        <div class="catalog-grid">
+
+          <div class="catalog-card transfer-feature">
+            <div class="catalog-icon">↗</div>
+
+            <h2>Nova transferência</h2>
+
+            <p>
+              Envie Pix ou faça uma transferência bancária.
+            </p>
+
+            <form
+              class="transfer-form"
+              onsubmit="makeTransfer(event)">
+
+              <label for="recipient">
+                Destinatário
+              </label>
+
+              <input
+                id="recipient"
+                type="text"
+                placeholder="Nome ou chave Pix"
+                required>
+
+              <label for="transferAmount">
+                Valor
+              </label>
+
+              <input
+                id="transferAmount"
+                type="number"
+                min="1"
+                placeholder="R$ 0,00"
+                required>
+
+              <label for="message">
+                Mensagem
+              </label>
+
+              <input
+                id="message"
+                type="text"
+                placeholder="Opcional">
+
+              <button
+                class="primary-button"
+                type="submit">
+                Continuar transferência
+              </button>
+
+            </form>
+          </div>
+
+          <div class="catalog-card">
+            <div class="card-icon purple">⌁</div>
+
+            <h3>Pix instantâneo</h3>
+
+            <p>
+              Disponível 24 horas por dia, todos os dias.
+            </p>
+
+            <span class="status">
+              Disponível agora
+            </span>
+          </div>
+
+          <div class="catalog-card">
+            <div class="card-icon green">▣</div>
+
+            <h3>Transferência bancária</h3>
+
+            <p>
+              Envie dinheiro para contas de outros bancos.
+            </p>
+
+            <span class="status">
+              Processamento seguro
+            </span>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- CARTÕES -->
+      <section id="cards" class="page">
+
+        <div class="page-header">
+          <span class="eyebrow">NOVA24 CARDS</span>
+          <h1>Catálogo de cartões</h1>
+          <p>Escolha o cartão ideal para o seu estilo de vida.</p>
+        </div>
+
+        <div class="cards-catalog">
+
+          <div class="catalog-card bank-card-card">
+
+            <div class="catalog-card-top">
+              <span>
+                NOVA<span class="highlight">24</span>
+              </span>
+
+              <span class="chip"></span>
+            </div>
+
+            <div class="catalog-card-number">
+              5482 •••• •••• 9021
+            </div>
+
+            <div class="catalog-card-bottom">
+              <span>RAFAEL ALMEIDA</span>
+              <span>VIRTUAL</span>
+            </div>
+
+            <h2>Cartão Virtual</h2>
+
+            <p>
+              Ideal para compras online e assinaturas digitais.
+            </p>
+
+            <button
+              class="primary-button"
+              onclick="showToast('Cartão virtual selecionado.')">
+              Usar este cartão
+            </button>
+
+          </div>
+
+          <div class="catalog-card bank-card-card black-card">
+
+            <div class="catalog-card-top">
+              <span>
+                NOVA<span class="highlight">24</span>
+              </span>
+
+              <span class="chip"></span>
+            </div>
+
+            <div class="catalog-card-number">
+              9021 •••• •••• 1188
+            </div>
+
+            <div class="catalog-card-bottom">
+              <span>RAFAEL ALMEIDA</span>
+              <span>BLACK</span>
+            </div>
+
+            <h2>Cartão Black</h2>
+
+            <p>
+              Benefícios premium, cashback e experiências exclusivas.
+            </p>
+
+            <button
+              class="outline-button"
+              onclick="showToast('Solicitação iniciada.')">
+              Solicitar cartão
+            </button>
+
+          </div>
+
+          <div class="catalog-card">
+
+            <div class="card-icon green">✦</div>
+
+            <h2>Cartão físico</h2>
+
+            <p>
+              Receba seu cartão físico em até 7 dias úteis.
+            </p>
+
+            <ul class="benefits">
+              <li>✓ Sem anuidade</li>
+              <li>✓ Controle pelo aplicativo</li>
+              <li>✓ Bloqueio instantâneo</li>
+            </ul>
+
+            <button
+              class="primary-button"
+              onclick="showToast('Cartão físico solicitado.')">
+              Pedir cartão
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- INVESTIMENTOS -->
+      <section id="investments" class="page">
+
+        <div class="page-header">
+          <span class="eyebrow">NOVA24 WEALTH</span>
+          <h1>Catálogo de investimentos</h1>
+          <p>Faça seu dinheiro trabalhar para você.</p>
+        </div>
+
+        <div class="catalog-grid">
+
+          <div class="catalog-card investment-card">
+
+            <div class="investment-top">
+              <div class="card-icon green">⌁</div>
+              <span class="risk low">Baixo risco</span>
+            </div>
+
+            <h2>Reserva automática</h2>
+
+            <p>
+              Liquidez diária para sua reserva de emergência.
+            </p>
+
+            <div class="investment-rate">
+              <strong>100%</strong>
+              <span>do CDI</span>
+            </div>
+
+            <button
+              class="primary-button"
+              onclick="showToast('Investimento selecionado.')">
+              Investir agora
+            </button>
+
+          </div>
+
+          <div class="catalog-card investment-card">
+
+            <div class="investment-top">
+              <div class="card-icon purple">◈</div>
+              <span class="risk medium">Médio risco</span>
+            </div>
+
+            <h2>Renda fixa</h2>
+
+            <p>
+              Invista com previsibilidade e segurança.
+            </p>
+
+            <div class="investment-rate">
+              <strong>12,4%</strong>
+              <span>ao ano</span>
+            </div>
+
+            <button
+              class="primary-button"
+              onclick="showToast('Investimento selecionado.')">
+              Conhecer produto
+            </button>
+
+          </div>
+
+          <div class="catalog-card investment-card">
+
+            <div class="investment-top">
+              <div class="card-icon pink">✦</div>
+              <span class="risk high">Alto risco</span>
+            </div>
+
+            <h2>Carteira global</h2>
+
+            <p>
+              Diversifique seus investimentos no Brasil e no mundo.
+            </p>
+
+            <div class="investment-rate">
+              <strong>18,7%</strong>
+              <span>projeção anual</span>
+            </div>
+
+            <button
+              class="outline-button"
+              onclick="showToast('Carteira aberta.')">
+              Ver carteira
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- CONFIGURAÇÕES -->
+      <section id="settings" class="page">
+
+        <div class="page-header">
+          <span class="eyebrow">NOVA24 ACCOUNT</span>
+          <h1>Configurações</h1>
+          <p>Gerencie sua conta e suas preferências.</p>
+        </div>
+
+        <div class="settings-list">
+
+          <div class="setting-item">
+            <div class="setting-symbol">♙</div>
+
+            <div>
+              <h3>Perfil pessoal</h3>
+              <p>Nome, e-mail, telefone e dados pessoais.</p>
+            </div>
+
+            <button onclick="showToast('Perfil aberto.')">
+              →
+            </button>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-symbol">🔒</div>
+
+            <div>
+              <h3>Segurança e acesso</h3>
+              <p>Senha, biometria e autenticação em dois fatores.</p>
+            </div>
+
+            <button onclick="showToast('Configurações de segurança abertas.')">
+              →
+            </button>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-symbol">♢</div>
+
+            <div>
+              <h3>Notificações</h3>
+              <p>Controle alertas e avisos da sua conta.</p>
+            </div>
+
+            <button onclick="showToast('Preferências de notificações abertas.')">
+              →
+            </button>
+          </div>
+
+          <div class="setting-item danger">
+            <div class="setting-symbol">×</div>
+
+            <div>
+              <h3>Encerrar sessão</h3>
+              <p>Sair da sua conta neste dispositivo.</p>
+            </div>
+
+            <button onclick="showToast('Sessão encerrada.')">
+              →
+            </button>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <div
+    id="toast"
+    class="toast">
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
